@@ -1,0 +1,116 @@
+% Links
+\usepackage{hyperref}
+
+% Lines
+\usepackage{setspace}
+\setstretch{1.25}
+
+% Fonts
+\usepackage{fontawesome}
+\usepackage[math]{iwona}
+\usepackage[T1]{fontenc}
+
+% tikz
+\usepackage{tikz}
+
+% Geometry
+\usepackage[
+    a4paper,
+    width=17.5cm,
+    top=15mm,
+    bottom=20mm,
+    left=1cm,
+    bindingoffset=6mm
+]{geometry}
+
+% Colors
+\usepackage{xcolor}
+\definecolor{light-gray}{gray}{0.6}
+\definecolor{gray}{gray}{0.25}
+\definecolor{dark-gray}{gray}{0.05}
+\newcommand{\sgray}[1]{\textcolor{gray}{{\small #1}}}
+
+% Tables
+\usepackage{array}
+\usepackage{multirow}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% Long table
+\usepackage{longtable}
+
+% Title
+\usepackage{titling}
+
+
+% CV environments and commands
+\newenvironment{cvline}[1]
+    {\begin{longtable}{L{17cm}}\parttitle{1}{#1}\\}
+    {\end{longtable}}
+    
+\NewDocumentCommand\cvtext{m}{%
+    \desc{#1}\\
+}
+
+\newenvironment{cvsection}[1]
+    {\begin{longtable}{L{13cm}R{4cm}}\parttitle{2}{#1}\\}
+    {\end{longtable}}
+
+\NewDocumentCommand\cvitem{moooo}{%
+    \IfNoValueTF{#5}%
+    {%
+        \IfNoValueTF{#4}%
+        {%
+            \IfNoValueTF{#3}%
+            {%
+                \IfNoValueTF{#2}%
+                {%
+                    \textbf{#1}\\%
+                    \cvsep%
+                }%
+                {%
+                    \textbf{#1} & \multirow{1}{*}{#2}\\%
+                    \cvsep%
+                }%
+            }%
+            {%
+                \textbf{#1} & \multirow{2}{*}{#2}\\%
+                \desc{#3} &\\%
+                \cvsep%
+            }%
+        }%
+        {%
+            \textbf{#1} & \multirow{3}{*}{#2}\\%
+            \desc{#3} &\\%
+            \desc{#4} &\\%
+            \cvsep%
+        }%
+    }%
+    {%
+        \textbf{#1} & \multirow{4}{*}{#2}\\%
+        \desc{#3} &\\%
+        \desc{#4} &\\%
+        \desc{#5} &\\%
+        \cvsep%
+    }%
+}
+    
+
+% Separators
+\newcommand{\cvsep}{\vspace{-2mm}}
+\newcommand{\sep}{\vspace{-2mm}}
+
+% Inline items
+\newcommand{\initem}[1]{\desc{\hspace{3mm}#1}}
+
+% New part symbol
+\newcommand{\newpart}{{\footnotesize~\sectionicon}}
+
+% Part title
+\newcommand{\parttitle}[2]{\multicolumn{#1}{l}{\vspace{0mm}\hspace{5mm}\
+{\large\textbf{\newpart~#2}}}\vspace{-2mm}\\\multicolumn{#1}{l}{\vspace{1mm}\
+\textcolor{light-gray}{\rule{\textwidth}{0.1mm}}}}
+
+% Descriptions
+\newcommand{\desc}[1]{\textcolor{dark-gray}{{\small #1}}}

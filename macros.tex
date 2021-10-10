@@ -1,0 +1,56 @@
+% Profile pic
+\NewDocumentCommand \profilepic {O{4cm} O{2cm} m}{%
+    \begin{tikzpicture}
+        \clip (0,0) circle (#2) node {\includegraphics[width=#1]{#3}};
+    \end{tikzpicture}
+}
+
+% Macros
+\newcommand{\linkedinicon}{{\faicon{linkedin}}}
+\newcommand{\gitlabicon}{{\faicon{gitlab}}}
+\newcommand{\sectionicon}{{\faicon{circle}}}
+\newcommand{\phoneicon}{{\faicon{phone}}}
+\newcommand{\homeicon}{{\faicon{home}}}
+\newcommand{\envelopeicon}{{\faicon{envelope}}}
+
+% Personal details
+\newcommand{\name}{Saeed Sarpas}
+\newcommand{\birth}{22 May 1989}
+\newcommand{\placeofbirth}{Karaj, Iran}
+\newcommand{\nationalitytag}{{\footnotesize Nationality:}}
+\newcommand{\nationality}{Iranian}
+\newcommand{\languages}{Persian: Native, English: Fluent, German: Beginner}
+
+% Addresses
+\newcommand{\officeaddr}{HIT building --- Room J41.4}
+\newcommand{\officepostalcode}{Wolfgang-Pauli-Str. 27 --- 8093 Z\"{u}rich}
+\newcommand{\officetel}{+41-(0)44 633 63 14}
+\newcommand{\officeemail}{saeed.sarpas@phys.ethz.ch}
+\newcommand{\homeaddr}{Altstetterstrasse 220}
+\newcommand{\homepostalcode}{8048 Z\"{u}rich}
+\newcommand{\hometel}{+41-(0)78 205 89 65}
+\newcommand{\homeemail}{s.sarpas@gmail.com}
+
+% Tags
+\newcommand{\birthtag}{{\footnotesize Date of Birth:}}
+\newcommand{\contactinfotag}{{\footnotesize\sectionicon} Contact Information:}
+\newcommand{\emailtag}{{\footnotesize\envelopeicon}}
+\newcommand{\languagestag}{{\footnotesize\sectionicon} Language Skills:}
+\newcommand{\personalinfotag}{{\footnotesize\sectionicon} Personal Information:}
+\newcommand{\placeofbirthtag}{{\footnotesize Place of Birth:}}
+\newcommand{\teltag}{{\footnotesize\phoneicon}}
+
+% Abbreviations
+\newcommand{\eth}{ETH Z\"{u}rich, Switzerland}
+\newcommand{\ipa}{ETH Z\"{u}rich, Institute for Particle Physics and Astrophysics, Switzerland}
+\newcommand{\AIfA}{Argelander-Institut f\"{u}r Astronomie, University of Bonn,
+Germany}
+\newcommand{\SBU}{Shahid Beheshti University, Tehran, Iran}
+\newcommand{\NODET}{Shahid Soltani high school (National Organization for Development of Exceptional Talents), Karaj, Iran}
+\newcommand{\INEF}{Iran’s National Elites Foundation}
+\newcommand{\YSC}{Young Scholar Club (YSC), Tehran, Iran}
+\newcommand{\badhonnef}{Physikzentrum Bad Honnef, Germany}
+\newcommand{\IPM}{Institute for Research in Fundamental Sciences, IPM, Tehran,
+Iran}
+\newcommand{\IASBS}{Institute for Advanced Studies in Basic Sciences (IASBS),
+Zanjan, Iran}
